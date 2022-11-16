@@ -13,5 +13,14 @@ UCLASS()
 class PLZWORK_API APlzWorkGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	APlzWorkGameModeBase();
 	
+protected:
+	virtual void BeginPlay() override;
+
+private:
+	UPROPERTY()
+	class UFMODAudioComponent* FMODAudio;
 };
