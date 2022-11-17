@@ -14,7 +14,7 @@ void APlzWorkGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	TSoftObjectPtr<UFMODEvent> Event{ FSoftObjectPath{ TEXT("FMODEvent'/Game/FMOD/Events/BGM_New/InGame/BGM_Game_Loading.BGM_Game_Loading'") } };
+	TSoftObjectPtr<UFMODEvent> Event{ FSoftObjectPath{ TEXT("FMODEvent'/Game/FMOD/Events/test.test'") } };
 	FMODAudio->SetEvent(Event.LoadSynchronous());
 	FMODAudio->Play();
 
