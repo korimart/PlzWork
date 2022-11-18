@@ -5,6 +5,10 @@
 #include "FMODEvent.h"
 #include "FMODAudioComponent.h"
 
+#if PLATFORM_IOS
+#include "IOS/IOSAppDelegate.h"
+#endif
+
 APlzWorkGameModeBase::APlzWorkGameModeBase()
 {
 	FMODAudio = CreateDefaultSubobject<UFMODAudioComponent>(TEXT("FMOD"));
