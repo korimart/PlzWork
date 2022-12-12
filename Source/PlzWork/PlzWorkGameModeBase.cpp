@@ -21,11 +21,15 @@ void APlzWorkGameModeBase::BeginPlay()
 	TSoftObjectPtr<UFMODEvent> Event{ FSoftObjectPath{ TEXT("FMODEvent'/Game/FMOD/Events/test.test'") } };
 	FMODAudio->SetEvent(Event.LoadSynchronous());
 	FMODAudio->Play();
+}
 
+void APlzWorkGameModeBase::gg(bool bFirst, bool bSecond)
+{
 #if PLATFORM_IOS
 	[[IOSAppDelegate GetDelegate] SetFeature: EAudioFeature::BluetoothMicrophone Active: YES];
 	[[IOSAppDelegate GetDelegate] SetFeature: EAudioFeature::UseReceiver Active: YES];
-	[[IOSAppDelegate GetDelegate] EnableVoiceChat: YES];
-	[[IOSAppDelegate GetDelegate] EnableHighQualityVoiceChat: YES];
+	[[IOSAppDelegate GetDelegate] EnableVoiceChat: bFirst];
+	[[IOSAppDelegate GetDelegate] EnableHighQualityVoiceChat: bSecond];
+	[[IOSAppDelegate GetDelegate] ToggleAudioSession: YES];
 #endif
 }

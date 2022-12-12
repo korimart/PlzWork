@@ -23,4 +23,7 @@ protected:
 private:
 	UPROPERTY()
 	class UFMODAudioComponent* FMODAudio;
+
+	UFUNCTION(Exec)
+	void gg(bool bFirst, bool bSecond);
 };
